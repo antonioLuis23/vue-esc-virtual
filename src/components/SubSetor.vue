@@ -1,15 +1,66 @@
 <template>
     <div class="grid-in-blocks zoomTarget">
-        <h3>{{subSector.nome}}</h3>
+        <img v-if="subSectorLogo" :src="subSectorLogo"  :alt="subSector.nome" />
+        <h3 v-else>{{ subSector.nome }}</h3>
+         <div v-show="subSector.funcionarios " id="odhen-retail-block">
+            <table>
+                <tr>
+                    <th>Função</th>
+                    <th>Nome</th>
+                    <th>Chat</th>
+                    <th>Email</th>
+                </tr>
+                <tr v-for="(funcionario, index) in subSector.funcionarios" :key="index">
+                    <td>{{funcionario.funcao}}</td>
+                    <td>{{funcionario.nome}}</td>
+                    <td>
+                        <a
+                        :href="funcionario.chat"
+                        target="_blank"
+                        >
+                        <img
+                            class="img-icon"
+                            :src="require('../assets/icons/chat-white-48dp.svg')"
+                            alt="Chat"
+                        />
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
+        data(){
+            return {
+                mostrarBlocos: false
+            }
+        },
         name: 'SubSetor',
         props:{
             subSector: Object
-        }
+        },
+        methods:{
+            show: function(){
+                console.log('show');
+                this.mostrarBlocos=true;
+            },
+            hide: function(){
+                console.log('hide');
+                this.mostrarBlocos=false;
+            }
+        },
+        computed: {
+            subSectorLogo () {
+                if (!this.subSector.logo){
+                    return;
+                } 
+                return require("../assets/images/"+this.subSector.logo);
+
+            }
+        },
     }
 </script>
 
@@ -24,9 +75,16 @@
         cursor:             pointer;
         text-align:         center;
     }
+    .grid-in-blocks > img {
+        width: 10em;
+    }
     .grid-in-blocks:hover {
         background: rgba(0, 0, 0, 0.1);
         color:      white;
+    }
+
+    .img-icon {
+        width: 1.5em;
     }
 
 </style>

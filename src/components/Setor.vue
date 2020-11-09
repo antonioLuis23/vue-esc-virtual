@@ -1,35 +1,39 @@
 <template>
-    <div class="grid-blocks zoomTarget" 
+    <div :id="key" class="grid-blocks zoomTarget" 
     :style="{background: sector.background, color: sector.color }"
-    @click.stop="show">
+    @click.stop="show"
+    v-clickoutside="hide"
+    tabIndex="0"
+    >
         <img v-if="sectorLogo" :src="sectorLogo"  :alt="sector.nome" />
         <h2 v-else>{{ sector.nome }}</h2>
         
-        <div class="grid-container" v-if="mostrarBlocos" v-click-outside="hide">
+        <div class="grid-container" 
+            v-show="mostrarBlocos"
+        >
             <SubSetor v-for="(subSector, index) in sector.subsetores" :key="index" :subSector="subSector"></SubSetor>
         </div>
     </div>
 </template>
 
 <script>
-
     import SubSetor from '@/components/SubSetor.vue';
-    import ClickOutside from '@/ClickOutside';
     export default {
         name: 'Setor',
+
         data() {
             return {
                 mostrarBlocos: false
             }
         },
-        directives:{
-            "click-outside": ClickOutside
-        },
+
         methods:{
             show: function(){
+                console.log('show');
                 this.mostrarBlocos=true;
             },
             hide: function(){
+                console.log('hide');
                 this.mostrarBlocos=false;
             }
         },
@@ -46,7 +50,8 @@
             }
         },
         props:{
-            sector: Object
+            sector: Object,
+            key: Number
         }
     }
 </script>
@@ -61,8 +66,12 @@
     cursor:             pointer;
     text-align:         center;
 }
+.grid-blocks:focus {
+    outline: none;
+}
 .grid-blocks > img {
     width: 10em;
+    margin: 20px;
 }
 .grid-blocks:hover {
     /*box-shadow: 0 5px 22px 0 rgba(0,0,0,.25);*/

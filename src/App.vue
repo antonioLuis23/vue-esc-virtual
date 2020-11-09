@@ -22,6 +22,7 @@ export default {
   components: {
     Setor
   },
+
   data(){
     return {
       setores: [
@@ -38,7 +39,40 @@ export default {
           color: 'white',
           subsetores: [
             {
-              nome: 'Retail'
+              nome: 'Retail',
+              logo: 'odhen-retail.png',
+              salas:[
+                {
+                  nomeSala: 'Odhen Retail',
+                  responsavel: 'Alline Martins',
+                  sala: 'https://hangouts.google.com/call/tysdkuGiy51QuF9ahgjrACEA' 
+                },
+                                {
+                  nomeSala: 'Odhen Retail/Conciliador',
+                  responsavel: 'Francismar Araujo',
+                  sala: 'https://hangouts.google.com/u/7/call/R5aS85hkjD4YZvTIi79sAEEE?no_rd' 
+                }
+              ],
+              funcionarios: [
+                {
+                  nome: 'Alline Martins',
+                  funcao: 'Líder',
+                  chat: 'https://chat.teknisa.com/direct/allinemartins',
+                  email: 'aline.martins@teknisa.com',
+                },
+                {
+                  nome: 'Moisés Freitas',
+                  funcao: 'Scrum Master',
+                  chat: 'https://chat.teknisa.com/direct/moisesfreitas',
+                  email: 'moises@teknisa.com',
+                },
+                                {
+                  nome: 'Antonio Luis',
+                  funcao: 'Desenvolvedor',
+                  chat: 'https://chat.teknisa.com/direct/antoniosilva',
+                  email: 'antonio@teknisa.com',
+                }
+              ]
             },
             {
               nome: 'Food Service'
@@ -81,6 +115,30 @@ export default {
 </script>
 
 <style>
+html {
+    font-size: 10px;
+}
+  
+h1 {
+font-size: 4em;
+}
+h2 {
+    font-size: 2.5em;
+}
+h3{
+    font-size: 1.5em;
+}
+p{
+    font-size: 2em; 
+}
+body {
+    font-family:    "Source Sans Pro", sans-serif;
+    font-weight:    300;
+    font-size:      1em;
+    line-height:    1.65;
+    overflow-x:     hidden;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
