@@ -2,7 +2,7 @@
     <div :id="key" class="grid-blocks zoomTarget" 
     :style="{background: sector.background, color: sector.color }"
     @click.stop="show"
-    v-clickoutside="hide"
+    v-clicafora="hide"
     tabIndex="0"
     >
         <img v-if="sectorLogo" :src="sectorLogo"  :alt="sector.nome" />
@@ -70,7 +70,7 @@
     outline: none;
 }
 .grid-blocks > img {
-    width: 10em;
+    width: 13em;
     margin: 20px;
 }
 .grid-blocks:hover {

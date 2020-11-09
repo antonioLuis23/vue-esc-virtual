@@ -5,10 +5,13 @@
       </header>
       <!-- Here is our page's main content -->
       <main>
-        <div class="grid-container">
-          
-            <Setor v-for="(sector, index) in setores" :key="index" :sector="sector"></Setor>
-  
+        <div class="teknisa">
+          <img :src="require('@/assets/images/logo-teknisa.png')" alt="Teknisa" />
+          <div class="grid-container">
+            
+              <Setor v-for="(sector, index) in setores" :key="index" :sector="sector"></Setor>
+
+          </div>
         </div>
       </main>
     </div>
@@ -32,6 +35,30 @@ export default {
           color: 'white',
           subsetores:[]
         },
+        
+        {
+          nome: 'TecFood',
+          background: 'rgba(232,54,54, 1)',
+          color: 'white',
+          subsetores: []
+        },
+
+        {
+          nome: 'Recursos Humanos',
+          background: '#3363ce',
+          color: 'white',
+          subsetores: []
+        },
+        {
+          nome: 'Pebbian',
+          background: 'rgba(0,157,116, 1)',
+          color: 'white',
+           
+        },
+        {
+          nome: 'Salas de Reunião',
+          subsetores: []
+        },
         {
           nome: 'Odhen',
           logo: 'odhen.png',
@@ -45,12 +72,17 @@ export default {
                 {
                   nomeSala: 'Odhen Retail',
                   responsavel: 'Alline Martins',
-                  sala: 'https://hangouts.google.com/call/tysdkuGiy51QuF9ahgjrACEA' 
+                  link: 'https://hangouts.google.com/call/tysdkuGiy51QuF9ahgjrACEA' 
                 },
-                                {
+                {
                   nomeSala: 'Odhen Retail/Conciliador',
                   responsavel: 'Francismar Araujo',
-                  sala: 'https://hangouts.google.com/u/7/call/R5aS85hkjD4YZvTIi79sAEEE?no_rd' 
+                  link: 'https://hangouts.google.com/u/7/call/R5aS85hkjD4YZvTIi79sAEEE?no_rd' 
+                },
+                {
+                  nomeSala: 'Sala dos Estágiarios',
+                  responsavel: 'Alline Martins',
+                  link:'https://hangouts.google.com/call/cpMezNDehG758A61baUmACEA'
                 }
               ],
               funcionarios: [
@@ -66,12 +98,25 @@ export default {
                   chat: 'https://chat.teknisa.com/direct/moisesfreitas',
                   email: 'moises@teknisa.com',
                 },
-                                {
+                {
                   nome: 'Antonio Luis',
                   funcao: 'Desenvolvedor',
                   chat: 'https://chat.teknisa.com/direct/antoniosilva',
                   email: 'antonio@teknisa.com',
+                },
+                {
+                  nome: 'Rennan',
+                  funcao: 'Desenvolvedor',
+                  chat: 'https://chat.teknisa.com/direct/antoniosilva',
+                  email: 'antonio@teknisa.com',
+                },
+                {
+                  nome: 'Rafael',
+                  funcao: 'Desenvolvedor',
+                  chat: 'https://chat.teknisa.com/direct/antoniosilva',
+                  email: 'antonio@teknisa.com',
                 }
+
               ]
             },
             {
@@ -85,28 +130,6 @@ export default {
             }
           ]
         },
-        {
-          nome: 'TecFood',
-          background: 'rgba(232,54,54, 1)',
-          color: 'white',
-          subsetores: []
-        },
-        {
-          nome: 'Pebbian',
-          background: 'rgba(0,157,116, 1)',
-          color: 'white',
-          subsetores: []
-        },
-        {
-          nome: 'Recursos Humanos',
-          background: '#3363ce',
-          color: 'white',
-          subsetores: []
-        },
-        {
-          nome: 'Salas de Reunião',
-          subsetores: []
-        }
 
       ]
     }
@@ -123,13 +146,13 @@ h1 {
 font-size: 4em;
 }
 h2 {
-    font-size: 2.5em;
+    font-size: 3em;
 }
 h3{
-    font-size: 1.5em;
+    font-size: 2em;
 }
 p{
-    font-size: 2em; 
+    font-size: 1.5em; 
 }
 body {
     font-family:    "Source Sans Pro", sans-serif;
@@ -147,7 +170,16 @@ body {
   color: #2c3e50;
   margin-top: 60px;
 }
-
+.teknisa > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4em;
+    width: 30em;
+}
+.teknisa{
+  padding: 0 80px;
+}
 .grid-container {
     display:                grid;
     grid-template-columns:  repeat(2, 1fr); 
