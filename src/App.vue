@@ -115,6 +115,12 @@ export default {
                   funcao: 'Desenvolvedor',
                   chat: 'https://chat.teknisa.com/direct/antoniosilva',
                   email: 'antonio@teknisa.com',
+                },
+                {
+                  nome: 'Vinicius',
+                  funcao: 'Desenvolvedor',
+                  chat: 'https://chat.teknisa.com/direct/antoniosilva',
+                  email: 'antonio@teknisa.com',
                 }
 
               ]
