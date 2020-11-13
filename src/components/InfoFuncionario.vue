@@ -31,7 +31,7 @@
                                 </a>
                             </div>
                             <div class="chat-text">
-                               <a :href="funcionario.chat">Chat Teknisa</a>
+                               <a :href="funcionario.chat" target="_blank">Chat Teknisa</a>
                             </div>
                         </div>
                     </div>
@@ -86,6 +86,7 @@
         z-index: 1; /* Sit on top */
         margin-top: -60px;
         color: black;
+        
     }
 
     /* Modal Content */

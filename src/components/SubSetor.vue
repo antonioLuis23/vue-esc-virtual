@@ -2,11 +2,11 @@
     <div @click="show" v-clicafora="hide" class="grid-in-blocks zoomTarget" data-scalemode="both"  data-targetsize="0.7">
         
         
-        <div v-show="mostraPopup" class="modal">
+        <div v-show="mostraPopup" class="modalPopup">
             <div id="myModal" class="card-popup">
                 <span @click="hidePopup" class="close">&times;</span>
                 <div class="card-top">
-                    <div class="card-name">Videoconferencia</div>
+                    <div class="card-name">Videoconferência</div>
                 </div>
                 <div class="card-bottom">
                     <table>
@@ -110,6 +110,12 @@
         grid-template-columns:  repeat(2, 1fr); 
         grid-gap:               1em;
     } */
+    .modalPopup{
+        display: block; /* Hidden by default */
+        position: absolute; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 56%;
+    }
     .grid-people{
         display:grid;
         grid-template-columns:  repeat(3, 1fr); 
