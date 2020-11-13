@@ -1,7 +1,6 @@
 <template>
     <div id="wrapper">
       <header>
-        <h1>Escritório Virtual</h1>
       </header>
       <!-- Here is our page's main content -->
       <main>
@@ -155,6 +154,17 @@ export default {
           color: 'white'
         },
         {
+          nome: 'Zeedhi',
+          background: 'chocolate',
+          color: 'white'
+        },
+        {
+          nome: 'EAD',
+          background: 'blueviolet',
+          color: 'white'
+        },
+
+        {
           nome: 'Cloud e Rede',
           background: 'blue',
           color: 'white'
@@ -163,7 +173,22 @@ export default {
           nome: 'Comercial',
           background: 'coral',
           color: 'white'
-        },
+        }, 
+        {
+          nome: 'Quadro de Avisos',
+          background: '#fff700',
+          color: 'black',
+          info: [
+            {
+              titulo: "Dev Info: Integrações Odhen",
+              texto:"Dev info ocorrendo toda sexta das 9:15h às 09:45 na sala: https://meet.google.com/qcq-rugo-ixp"
+            },
+            {
+              titulo: "Nova Plataforma de Documentação: Docs Teknisa!",
+              texto: "Chegou mais novidade por aqui! Estamos lançando a plataforma de documentação Teknisa: docs.teknisa.com"
+            }
+          ]
+        }
       ]
     }
   }
