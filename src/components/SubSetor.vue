@@ -1,8 +1,45 @@
 <template>
     <div @click="show" v-clicafora="hide" class="grid-in-blocks zoomTarget" data-scalemode="both"  data-targetsize="0.7">
-        <SalasVideo></SalasVideo>
-        <div v-show="mostrarBlocos" class="video-options">
-            <img  :src="require('../assets/icons/video-white-48dp.svg')" />
+        
+        
+        <div v-show="mostraPopup" class="modal">
+            <div id="myModal" class="card-popup">
+                <span @click="hidePopup" class="close">&times;</span>
+                <div class="card-top">
+                    <div class="card-name">Videoconferencia</div>
+                </div>
+                <div class="card-bottom">
+                    <table>
+                        <tr>
+                            <th>Função</th>
+                            <th>Responsável</th>
+                            <th>Link</th>
+                        </tr>
+                        <tr v-for="(sala, index) in subSector.salas" :key="index">
+                            <td>{{sala.nomeSala}}</td>
+                            <td>{{sala.responsavel}}</td>
+                            <td>
+                                <a
+                                :href="sala.link"
+                                target="_blank"
+                                >
+                                <img
+                                    class="img-icon"
+                                    :src="require('../assets/icons/duo-black-48dp.svg')"
+                                    alt="Video"
+                                />
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div v-show="mostrarBlocos" @click="showPopup"  class="video-options">
+            <img   :src="require('../assets/icons/video-white-48dp.svg')" />
         </div>
         <div v-if="subSectorLogo" class="title-subsector">
             <img  :src="subSectorLogo"  :alt="subSector.nome" />
@@ -13,7 +50,6 @@
          <div v-show="mostrarBlocos && subSector.funcionarios" class="info-subsector" >
              <div class="wrapper-info">
                  <div class="wrapper-func">
-                    <p>Funcionários</p>
                     <div class="grid-people">
                         <InfoFuncionario v-for="(funcionario, index) in subSector.funcionarios"
                          :key="index"
@@ -28,11 +64,11 @@
 
 <script>
     import InfoFuncionario from '@/components/InfoFuncionario.vue';
-    import SalasVideo from '@/components/SalasVideo.vue';
     export default {
         data(){
             return {
-                mostrarBlocos: false
+                mostrarBlocos: false,
+                mostraPopup: false
             }
         },
         name: 'SubSetor',
@@ -45,10 +81,16 @@
             },
             hide: function(){
                 this.mostrarBlocos=false;
+            },
+            showPopup: function(){
+                this.mostraPopup=true;
+            },
+            hidePopup: function(){
+                this.mostraPopup=false;
             }
         },
         components: {
-            InfoFuncionario, SalasVideo
+            InfoFuncionario
         },
         computed: {
             subSectorLogo () {
@@ -107,6 +149,7 @@
     }
     .video-options img {
         width: 2em ;
+        cursor: pointer;
     }
     .video-options {
         float: right;

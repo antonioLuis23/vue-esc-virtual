@@ -14,6 +14,9 @@
           </div>
         </div>
       </main>
+      <footer>
+        <p>Criado por Antonio Luis.</p>
+      </footer>
     </div>
 </template>
 
