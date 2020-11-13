@@ -29,11 +29,9 @@
 
         methods:{
             show: function(){
-                console.log('show');
                 this.mostrarBlocos=true;
             },
             hide: function(){
-                console.log('hide');
                 this.mostrarBlocos=false;
             }
         },
@@ -57,11 +55,11 @@
 </script>
 
 <style scoped>
+.grid-container{
+    transition:         all .2s ease-in-out;
+}
 .grid-blocks {
     padding: 1rem;
-    -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,.15);
-    -moz-box-shadow:    0 1px 4px 0 rgba(0,0,0,.15);
-    box-shadow:         0 1px 4px 0 rgba(0,0,0,.15);
     transition:         all .2s ease-in-out;
     cursor:             pointer;
     text-align:         center;

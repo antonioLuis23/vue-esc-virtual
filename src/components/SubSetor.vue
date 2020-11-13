@@ -1,74 +1,25 @@
 <template>
     <div @click="show" v-clicafora="hide" class="grid-in-blocks zoomTarget" data-scalemode="both"  data-targetsize="0.7">
-        <img v-if="subSectorLogo" :src="subSectorLogo"  :alt="subSector.nome" />
-        <h3 v-else>{{ subSector.nome }}</h3>
+        <SalasVideo></SalasVideo>
+        <div v-show="mostrarBlocos" class="video-options">
+            <img  :src="require('../assets/icons/video-white-48dp.svg')" />
+        </div>
+        <div v-if="subSectorLogo" class="title-subsector">
+            <img  :src="subSectorLogo"  :alt="subSector.nome" />
+        </div>
+        <div v-else  class="title-subsector">
+            <h3>{{ subSector.nome }}</h3>
+        </div>
          <div v-show="mostrarBlocos && subSector.funcionarios" class="info-subsector" >
              <div class="wrapper-info">
-                 <div class="wrapper-sala">
-                     <p>Videoconferência</p>
-                    <table>
-                        <tr>
-                            <th>Função</th>
-                            <th>Responsável</th>
-                            <th>Link</th>
-                        </tr>
-                        <tr v-for="(sala, index) in subSector.salas" :key="index">
-                            <td>{{sala.nomeSala}}</td>
-                            <td>{{sala.responsavel}}</td>
-                            <td>
-                                <a
-                                :href="sala.link"
-                                target="_blank"
-                                >
-                                <img
-                                    class="img-icon"
-                                    :src="require('../assets/icons/video-white-48dp.svg')"
-                                    alt="Video"
-                                />
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
-                 </div>
                  <div class="wrapper-func">
-                     <p>Funcionários</p>
-                    <table>
-                        <tr>
-                            <th>Função</th>
-                            <th>Nome</th>
-                            <th>Chat</th>
-                            <th>Email</th>
-                        </tr>
-                        <tr v-for="(funcionario, index) in subSector.funcionarios" :key="index">
-                            <td>{{funcionario.funcao}}</td>
-                            <td>{{funcionario.nome}}</td>
-                            <td>
-                                <a
-                                :href="funcionario.chat"
-                                target="_blank"
-                                >
-                                <img
-                                    class="img-icon"
-                                    :src="require('../assets/icons/chat-white-48dp.svg')"
-                                    alt="Chat"
-                                />
-                                </a>
-                            </td>
-
-                            <td>
-                                <a
-                                :href="funcionario.email"
-                                target="_blank"
-                                >
-                                <img
-                                    class="img-icon"
-                                    :src="require('../assets/icons/email-white-48dp.svg')"
-                                    alt="Email"
-                                />
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
+                    <p>Funcionários</p>
+                    <div class="grid-people">
+                        <InfoFuncionario v-for="(funcionario, index) in subSector.funcionarios"
+                         :key="index"
+                         :funcionario="funcionario"
+                         ></InfoFuncionario>
+                    </div>
                 </div>
             </div>
         </div>
@@ -76,6 +27,8 @@
 </template>
 
 <script>
+    import InfoFuncionario from '@/components/InfoFuncionario.vue';
+    import SalasVideo from '@/components/SalasVideo.vue';
     export default {
         data(){
             return {
@@ -94,6 +47,9 @@
                 this.mostrarBlocos=false;
             }
         },
+        components: {
+            InfoFuncionario, SalasVideo
+        },
         computed: {
             subSectorLogo () {
                 if (!this.subSector.logo){
@@ -107,10 +63,15 @@
 </script>
 
 <style scoped>
-    .wrapper-info{
+    /* .wrapper-info{
         display:grid;
         grid-template-columns:  repeat(2, 1fr); 
         grid-gap:               1em;
+    } */
+    .grid-people{
+        display:grid;
+        grid-template-columns:  repeat(3, 1fr); 
+        grid-gap:               0.4em;
     }
     .wrapper-info table{
         margin: 0 auto;
@@ -134,7 +95,6 @@
     }
     .grid-in-blocks:hover {
         background: rgba(0, 0, 0, 0.1);
-        color:      white;
     }
     .info-subsector {
        font-size: 1em;
@@ -142,5 +102,13 @@
     .img-icon {
         width: 1.5em;
     }
-
+    .title-subsector img {
+        width: 19em;
+    }
+    .video-options img {
+        width: 2em ;
+    }
+    .video-options {
+        float: right;
+    }
 </style>

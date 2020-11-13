@@ -42,7 +42,6 @@ export default {
           color: 'white',
           subsetores: []
         },
-
         {
           nome: 'Recursos Humanos',
           background: '#3363ce',
@@ -57,6 +56,8 @@ export default {
         },
         {
           nome: 'Salas de Reunião',
+          background: 'indianred',
+          color: 'white',
           subsetores: []
         },
         {
@@ -99,6 +100,9 @@ export default {
                   email: 'moises@teknisa.com',
                 },
                 {
+                  nome: 'Leticia Sahtler'
+                },
+                {
                   nome: 'Antonio Luis',
                   funcao: 'Desenvolvedor',
                   chat: 'https://chat.teknisa.com/direct/antoniosilva',
@@ -117,10 +121,16 @@ export default {
                   email: 'antonio@teknisa.com',
                 },
                 {
-                  nome: 'Vinicius',
+                  nome: 'Vinicius Resende',
                   funcao: 'Desenvolvedor',
                   chat: 'https://chat.teknisa.com/direct/antoniosilva',
                   email: 'antonio@teknisa.com',
+                },
+                {
+                  nome: 'Gustavo'
+                },
+                {
+                  nome: 'Everton'
                 }
 
               ]
@@ -136,7 +146,21 @@ export default {
             }
           ]
         },
-
+        {
+          nome: 'Governança',
+          background: 'green',
+          color: 'white'
+        },
+        {
+          nome: 'Cloud e Rede',
+          background: 'blue',
+          color: 'white'
+        },
+        {
+          nome: 'Comercial',
+          background: 'coral',
+          color: 'white'
+        },
       ]
     }
   }
@@ -149,19 +173,22 @@ html {
 }
   
 h1 {
-font-size: 4em;
+  font-size: 4em;
 }
 h2 {
     font-size: 3em;
 }
-h3{
+h3 {
     font-size: 2em;
 }
-p{
+h1, h2, h3, h4 {
+  font-weight: 600;
+}
+p {
     font-size: 1.5em; 
 }
 body {
-    font-family:    "Source Sans Pro", sans-serif;
+    font-family:    'Poppins';
     font-weight:    300;
     font-size:      1em;
     line-height:    1.65;
@@ -169,7 +196,7 @@ body {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
