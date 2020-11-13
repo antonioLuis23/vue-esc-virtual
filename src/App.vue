@@ -71,7 +71,17 @@ export default {
             {
               nome: 'Retail',
               logo: 'odhen-retail.png',
-              salas:[
+              infos: [
+                {
+                  titulo: "Daily Meeting",
+                  texto: "DM ocorre todos os dias às 14:45h na sala https://hangouts.google.com/call/tysdkuGiy51QuF9ahgjrACEA"
+                },
+                {
+                  titulo: "Leonardo de férias",
+                  texto: "Leonardo de férias durante o mês de novembro."
+                }
+              ],
+              salas: [
                 {
                   nomeSala: 'Odhen Retail',
                   responsavel: 'Alline Martins',
@@ -93,46 +103,52 @@ export default {
                   nome: 'Alline Martins',
                   funcao: 'Líder',
                   chat: 'https://chat.teknisa.com/direct/allinemartins',
-                  email: 'aline.martins@teknisa.com',
+                  email: 'exemplo@teknisa.com',
                 },
                 {
                   nome: 'Moisés Freitas',
                   funcao: 'Scrum Master',
                   chat: 'https://chat.teknisa.com/direct/moisesfreitas',
-                  email: 'moises@teknisa.com',
+                  email: 'exemplo@teknisa.com',
                 },
                 {
-                  nome: 'Leticia Sahtler'
+                  nome: 'Leticia Sahtler',
+                  chat: 'https://chat.teknisa.com/direct/leticiasahtler',
+                  email: 'exemplo@teknisa.com',
                 },
                 {
                   nome: 'Antonio Luis',
                   funcao: 'Desenvolvedor',
                   chat: 'https://chat.teknisa.com/direct/antoniosilva',
-                  email: 'antonio@teknisa.com',
+                  email: 'exemplo@teknisa.com',
                 },
                 {
-                  nome: 'Rennan',
+                  nome: 'Rennan Tavares',
                   funcao: 'Desenvolvedor',
-                  chat: 'https://chat.teknisa.com/direct/antoniosilva',
-                  email: 'antonio@teknisa.com',
+                  chat: 'https://chat.teknisa.com/direct/rennantavares',
+                  email: 'exemplo@teknisa.com',
                 },
                 {
                   nome: 'Rafael',
                   funcao: 'Desenvolvedor',
-                  chat: 'https://chat.teknisa.com/direct/antoniosilva',
-                  email: 'antonio@teknisa.com',
+                  chat: 'https://chat.teknisa.com/direct/rafael',
+                  email: 'exemplo@teknisa.com',
                 },
                 {
                   nome: 'Vinicius Resende',
                   funcao: 'Desenvolvedor',
-                  chat: 'https://chat.teknisa.com/direct/antoniosilva',
-                  email: 'antonio@teknisa.com',
+                  chat: 'https://chat.teknisa.com/direct/viniciusresende',
+                  email: 'exemplo@teknisa.com',
                 },
                 {
-                  nome: 'Gustavo'
+                  nome: 'Gustavo',
+                  chat: 'https://chat.teknisa.com/direct/gustavo',
+                  email: 'exemplo@teknisa.com',
                 },
                 {
-                  nome: 'Everton'
+                  nome: 'Everton',
+                  chat: 'https://chat.teknisa.com/direct/everton',
+                  email: 'exemplo@teknisa.com',
                 }
 
               ]

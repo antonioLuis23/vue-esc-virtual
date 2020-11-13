@@ -84,7 +84,7 @@
         display: block; /* Hidden by default */
         position: absolute; /* Stay in place */
         z-index: 1; /* Sit on top */
-        margin-top: -60px;
+        margin-top: -43px;
         color: black;
         
     }

@@ -13,14 +13,14 @@
         >
             <SubSetor v-for="(subSector, index) in sector.subsetores" :key="index" :subSector="subSector"></SubSetor>
 
-                <div class="info grid-in-blocks" v-for="(info, index) in sector.info" :key="index">
-                    <div class="titulo">
-                        <h3>{{info.titulo}}</h3>
-                    </div>
-                    <div class="texto">
-                        <p>{{info.texto}}</p>
-                    </div>
+            <div class="info grid-in-blocks" v-for="(info, index) in sector.info" :key="index">
+                <div class="titulo">
+                    <h3>{{info.titulo}}</h3>
                 </div>
+                <div class="texto">
+                    <p>{{info.texto}}</p>
+                </div>
+            </div>
 
         </div>
         

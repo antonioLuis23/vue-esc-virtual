@@ -1,10 +1,10 @@
 <template>
     <div @click="show" v-clicafora="hide" class="grid-in-blocks zoomTarget" data-scalemode="both"  data-targetsize="0.7">
         
-        
-        <div v-show="mostraPopup" class="modalPopup">
+        <!-- Popup mostrando as videoconferências-->
+        <div v-show="mostraSala" class="modalPopup">
             <div id="myModal" class="card-popup">
-                <span @click="hidePopup" class="close">&times;</span>
+                <span @click="hideSala" class="close">&times;</span>
                 <div class="card-top">
                     <div class="card-name">Videoconferência</div>
                 </div>
@@ -37,27 +37,51 @@
         </div>
 
 
+        <!-- Popup mostrando as infomações do subsetor-->
+        <div v-show="mostraInfo" class="modalPopup">
+            <div id="myModal" class="card-popup">
+                <span @click="hideInfo" class="close">&times;</span>
+                <div class="card-top">
+                    <div class="card-name">Informações</div>
+                </div>
+                <div class="card-bottom">
+                    <div class="info-subsector" v-for="(info, index) in subSector.infos" :key="index">
+                        <div class="titulo">
+                            <h3>{{info.titulo}}</h3>
+                        </div>
+                        <div class="texto">
+                            <p>{{info.texto}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <div v-show="mostrarBlocos" @click="showPopup"  class="video-options">
+
+
+        <div v-show="mostrarBlocos" @click="showSala"  class="subsector-options video">
             <img   :src="require('../assets/icons/video-white-48dp.svg')" />
         </div>
+        <div v-show="mostrarBlocos" @click="showInfo"  class="subsector-options info-icon">
+            <img   :src="require('../assets/icons/info-white-48dp.svg')" />
+        </div>
+
         <div v-if="subSectorLogo" class="title-subsector">
-            <img  :src="subSectorLogo"  :alt="subSector.nome" />
+            <img class="subsector-logo"  :src="subSectorLogo"  :alt="subSector.nome" />
         </div>
         <div v-else  class="title-subsector">
             <h3>{{ subSector.nome }}</h3>
         </div>
-         <div v-show="mostrarBlocos && subSector.funcionarios" class="info-subsector" >
-             <div class="wrapper-info">
-                 <div class="wrapper-func">
-                    <div class="grid-people">
-                        <InfoFuncionario v-for="(funcionario, index) in subSector.funcionarios"
-                         :key="index"
-                         :funcionario="funcionario"
-                         ></InfoFuncionario>
-                    </div>
-                </div>
+        
+         <div v-show="mostrarBlocos && subSector.funcionarios" class="people-subsector" >
+
+            <div class="grid-people">
+                <InfoFuncionario v-for="(funcionario, index) in subSector.funcionarios"
+                    :key="index"
+                    :funcionario="funcionario"
+                    ></InfoFuncionario>
             </div>
+
         </div>
     </div>
 </template>
@@ -68,7 +92,8 @@
         data(){
             return {
                 mostrarBlocos: false,
-                mostraPopup: false
+                mostraSala: false,
+                mostraInfo: false
             }
         },
         name: 'SubSetor',
@@ -82,11 +107,17 @@
             hide: function(){
                 this.mostrarBlocos=false;
             },
-            showPopup: function(){
-                this.mostraPopup=true;
+            showSala: function(){
+                this.mostraSala=true;
             },
-            hidePopup: function(){
-                this.mostraPopup=false;
+            hideSala: function(){
+                this.mostraSala=false;
+            },
+            showInfo: function(){
+                this.mostraInfo=true;
+            },
+            hideInfo: function(){
+                this.mostraInfo=false;
             }
         },
         components: {
@@ -121,13 +152,7 @@
         grid-template-columns:  repeat(3, 1fr); 
         grid-gap:               0.4em;
     }
-    .wrapper-info table{
-        margin: 0 auto;
-        
-    }
-    .wrapper-info tr{
-        border: 1px solid white;
-    }
+
     .grid-in-blocks {
         padding: 1rem;
         -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,.15);
@@ -144,8 +169,12 @@
     .grid-in-blocks:hover {
         background: rgba(0, 0, 0, 0.1);
     }
-    .info-subsector {
-       font-size: 1em;
+    .people-subsector {
+        font-size: 1em;  
+    }
+    .info-subsector{
+        max-width: 158px;
+        word-break: break-word;
     }
     .img-icon {
         width: 1.5em;
@@ -153,11 +182,25 @@
     .title-subsector img {
         width: 19em;
     }
-    .video-options img {
+    .subsector-options img {
         width: 2em ;
         cursor: pointer;
     }
-    .video-options {
+    .subsector-options {
         float: right;
+    }
+    .info-icon {
+        margin-right: 3px;
+    }
+    .subsector-logo {
+        margin-left: 26px;
+    }
+    .info-subsector .titulo h3{
+        font-size: 1.5em;
+        margin: 0 0;
+    }
+    .info-subsector .texto p{
+        font-size: 1.2em;
+        margin: 0 0;
     }
 </style>
