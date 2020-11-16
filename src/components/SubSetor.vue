@@ -4,7 +4,6 @@
         <!-- Popup mostrando as videoconferências-->
         <div v-show="mostraSala" class="modalPopup">
             <div id="myModal" class="card-popup">
-                <span @click="hideSala" class="close">&times;</span>
                 <div class="card-top">
                     <div class="card-name">Videoconferência</div>
                 </div>
@@ -32,6 +31,9 @@
                             </td>
                         </tr>
                     </table>
+                    <div class="close-container">
+                        <span @click="hideSala" class="close-button">Fechar</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -40,7 +42,6 @@
         <!-- Popup mostrando as infomações do subsetor-->
         <div v-show="mostraInfo" class="modalPopup">
             <div id="myModal" class="card-popup">
-                <span @click="hideInfo" class="close">&times;</span>
                 <div class="card-top">
                     <div class="card-name">Informações</div>
                 </div>
@@ -52,6 +53,9 @@
                         <div class="texto">
                             <p>{{info.texto}}</p>
                         </div>
+                    </div>
+                    <div class="close-container">
+                        <span @click="hideInfo" class="close-button">Fechar</span>
                     </div>
                 </div>
             </div>
@@ -78,6 +82,7 @@
             <div class="grid-people">
                 <InfoFuncionario v-for="(funcionario, index) in subSector.funcionarios"
                     :key="index"
+                    :teleportPopup="false"
                     :funcionario="funcionario"
                     ></InfoFuncionario>
             </div>
@@ -145,7 +150,7 @@
         display: block; /* Hidden by default */
         position: absolute; /* Stay in place */
         z-index: 1; /* Sit on top */
-        left: 56%;
+        margin: 0 7.5%;
     }
     .grid-people{
         display:grid;

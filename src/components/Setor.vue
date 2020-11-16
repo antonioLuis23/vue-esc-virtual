@@ -1,7 +1,7 @@
 <template>
     <div :id="key" class="grid-blocks zoomTarget" 
     :style="{background: sector.background, color: sector.color }"
-    @click.stop="show"
+    @click="show" 
     v-clicafora="hide"
     tabIndex="0"
     >
@@ -40,11 +40,14 @@
         },
 
         methods:{
-            show: function(){
+            show(){
                 this.mostrarBlocos=true;
             },
-            hide: function(){
+            hide(){
                 this.mostrarBlocos=false;
+            },
+            toggle(){
+                this.mostrarBlocos=!this.mostrarBlocos;
             }
         },
         components: {

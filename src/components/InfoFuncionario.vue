@@ -1,50 +1,64 @@
 <template>
-    <div v-clicafora="hidePopup">
-         <div class="popup" v-show="mostraPopup">
-            <!-- The Modal -->
-            <div class="modal">
-                <div id="myModal" class="card-popup">
-                    <span @click="hidePopup" class="close">&times;</span>
-                    <div class="card-top">
-                        <div class="card-name">{{funcionario.nome}}</div>
-                        <div class="card-funcao">{{funcionario.funcao}}</div>
-                    </div>
-                    <div class="card-bottom">
-                        <div class="email-block">
-                            <div class="email-icon">
-                                <a>
-                                <img class="img-icon"
-                                :src="require('../assets/icons/email-black-48dp.svg')"
-                                alt="Pessoa" />
-                                </a>
-                            </div>
-                            <div class="email-text">
-                                {{funcionario.email}}
-                            </div>
+    <div>
+        <teleport to="body" :disabled="!teleportPopup">
+            <div class="popup" v-show="mostraPopup">
+                <!-- The Modal -->
+                <div :class="teleportPopup?'modalSearch':'modalSubsetor' " >
+                    <div id="myModal" class="card-popup">
+                        
+                        <div class="card-top">
+                            <div class="card-name">{{funcionario.nome}}</div>
+                            <div class="card-funcao">{{funcionario.funcao}}</div>
                         </div>
-                        <div class="chat-block">
-                            <div class="chat-icon">
-                                <a>
-                                <img class="img-icon"
-                                :src="require('../assets/icons/chat-black-48dp.svg')"
-                                alt="Pessoa" />
-                                </a>
+                        <div class="card-bottom">
+                            <div class="email-block">
+                                <div class="email-icon">
+                                    <a>
+                                    <img class="img-icon"
+                                    :src="require('../assets/icons/email-black-48dp.svg')"
+                                    alt="Pessoa" />
+                                    </a>
+                                </div>
+                                <div class="email-text">
+                                    {{funcionario.email}}
+                                </div>
                             </div>
-                            <div class="chat-text">
-                               <a :href="funcionario.chat" target="_blank">Chat Teknisa</a>
+                            <div class="chat-block">
+                                <div class="chat-icon">
+                                    <a>
+                                    <img class="img-icon"
+                                    :src="require('../assets/icons/chat-black-48dp.svg')"
+                                    alt="Pessoa" />
+                                    </a>
+                                </div>
+                                <div class="chat-text">
+                                <a :href="funcionario.chat" target="_blank">Chat Teknisa</a>
+                                </div>
+                            </div>
+                            <div class="close-container">
+                                <span @click="hidePopup" class="close-button">Fechar</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </teleport>
+
         <div class="person" @click="showPopup">
-            <div>
+            <div class="person-icon">
                 <a>
-                <img class="img-icon" :src="require('../assets/icons/person-white-48dp.svg')" alt="Pessoa" />
+                <img v-if="!isSearch" class="img-icon"
+                 :src="require('../assets/icons/person-white-48dp.svg')" alt="Pessoa" />
+                 <img v-else class="img-icon"
+                 :src="require('../assets/icons/person-black-48dp.svg')" alt="Pessoa" />
                 </a>
             </div>
-            <span>{{funcionario.nome}}</span>
+            <div class="func-nome"> 
+                <span>{{funcionario.nome}}</span>
+            </div>
+            <div class="func-setor" v-show="teleportPopup"> 
+                <span>{{funcionario.setor}}</span>
+            </div>
         </div>
         
     </div>
@@ -59,16 +73,18 @@
         },
         methods:{
             showPopup: function(){
-                console.log('showPopup');
+                console.log('show popup?');
                 this.mostraPopup = true;
             },
             hidePopup: function(){
-                 console.log('hidePopup');
+                console.log('hide popup?');
                 this.mostraPopup = false;
             }
         },
         props:{
-            funcionario: Object
+            funcionario: Object,
+            isSearch: Boolean,
+            teleportPopup: Boolean
         },
         
     }
@@ -80,13 +96,29 @@
     }
 
     /* The Modal (background) */
-    .modal {
+    .modalSubsetor {
         display: block; /* Hidden by default */
         position: absolute; /* Stay in place */
         z-index: 1; /* Sit on top */
         margin-top: -43px;
-        color: black;
-        
+        color: black; 
+    }
+    .modalSearch {
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+        font-size: 2.5em;
+    }
+
+    .modalSearch .card-popup {
+        width: 450px;
     }
 
     /* Modal Content */
@@ -105,7 +137,21 @@
     .person {
         background:         rgba(255, 255, 255, 0.1);
         cursor:             pointer;
+        transition:         all .2s ease-in-out;
     }
+    .person:hover {
+        background: rgba(0, 0, 0, 0.1);
+    }
+    .person-icon{
+        margin-bottom: -0.7em;
+    }
+    .func-setor{
+        font-size: 0.8em;
+    }
+    .func-nome {
+        font-weight: 500;
+    }
+
     .card-name{
         font-size:       1.5em;
         font-weight:    600;
@@ -135,18 +181,19 @@
     }
 
     /* The Close Button */
-    .close {
-        color: #aaaaaa;
-        font-size: 14px;
-        position: absolute;
-        right: 2px;
-        top: -3px;
+    .close-container{
+        text-align: right;
     }
-
-    .close:hover,
-    .close:focus {
-        color: #ffffff;
+    .close-button{
+        color: blue;
+        font-weight: 400;
+        padding: 0.4em;
+        transition: all 300ms ease-in-out;
+    }
+    .close-button:hover,
+    .close-button:focus {
         text-decoration: none;
         cursor: pointer;
+        background-color: #e0f7ff;
     }
 </style>
