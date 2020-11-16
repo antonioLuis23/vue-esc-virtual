@@ -345,7 +345,7 @@ export default {
         display:                grid;
         grid-template-columns:  repeat(auto-fill, minmax(200px, 1fr)); 
         grid-gap:               0.4em;
-        font-size:              20px;
+        font-size:              1.5em;
         text-align:             center;
     }
     .search-box {
