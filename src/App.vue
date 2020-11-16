@@ -142,7 +142,7 @@ export default {
                 },
                 {
                   nome: 'Leticia Sahtler',
-                  funcao: 'Desenvolvedor',
+                  funcao: 'Desenvolvedora',
                   setor: 'Odhen Retail',
                   chat: 'https://chat.teknisa.com/direct/leticiasahtler',
                   email: 'exemplo@teknisa.com',
@@ -288,7 +288,6 @@ export default {
           || func.funcao.toLowerCase().includes(this.searchQuery.toLowerCase())
           )
           ? true: false ); 
-        console.log('resultado:',this.resultFunc);
         this.isResult = true;
       }
     }

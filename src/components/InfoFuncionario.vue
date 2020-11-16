@@ -73,11 +73,9 @@
         },
         methods:{
             showPopup: function(){
-                console.log('show popup?');
                 this.mostraPopup = true;
             },
             hidePopup: function(){
-                console.log('hide popup?');
                 this.mostraPopup = false;
             }
         },
