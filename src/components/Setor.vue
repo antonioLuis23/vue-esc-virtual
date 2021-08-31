@@ -11,7 +11,7 @@
         <div class="grid-container" 
             v-show="mostrarBlocos"
         >
-            <SubSetor v-for="(subSector, index) in sector.subsetores" :key="index" :subSector="subSector"></SubSetor>
+            <SubSetor v-for="(subSector, index) in sector.subsetores" :key="index" :subSector="subSector" :subSetorId="index"></SubSetor>
 
             <div class="info grid-in-blocks" v-for="(info, index) in sector.info" :key="index">
                 <div class="titulo">

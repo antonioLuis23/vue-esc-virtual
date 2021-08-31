@@ -32,7 +32,7 @@
                                     </a>
                                 </div>
                                 <div class="chat-text">
-                                <a :href="funcionario.chat" target="_blank">Chat Teknisa</a>
+                                <a :href="funcionario.chat" target="_blank">Workplace Chat</a>
                                 </div>
                             </div>
                             <div class="close-container">
@@ -108,7 +108,7 @@
         left: 0;
         top: 0;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         overflow: auto;
         background-color: rgb(0,0,0);
         background-color: rgba(0,0,0,0.4);

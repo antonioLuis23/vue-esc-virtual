@@ -1,5 +1,5 @@
 <template>
-    <div @click="show" v-clicafora="hide" class="grid-in-blocks zoomTarget" data-scalemode="both"  data-targetsize="0.7">
+    <div @click="show" v-clicafora="hide" class="grid-in-blocks zoomTarget" data-scalemode="both"  data-targetsize="0.7" id={{subSetorId}}>
         
         <!-- Popup mostrando as videoconferências-->
         <div v-show="mostraSala" class="modalPopup">
@@ -63,7 +63,7 @@
 
 
 
-        <div v-show="mostrarBlocos" @click="showSala"  class="subsector-options video">
+        <div v-show="mostrarBlocos && subSector.salas" @click="showSala"  class="subsector-options video">
             <img   :src="require('../assets/icons/video-white-48dp.svg')" />
         </div>
         <div v-show="mostrarBlocos" @click="showInfo"  class="subsector-options info-icon">
@@ -103,7 +103,8 @@
         },
         name: 'SubSetor',
         props:{
-            subSector: Object
+            subSector: Object,
+            subSetorId: Number
         },
         methods:{
             show: function(){

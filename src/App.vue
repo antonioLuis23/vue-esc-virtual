@@ -7,7 +7,7 @@
         <!-- Navigation bar -->
         <div class="teknisa">
           <div class="navbar">
-            <img class="logo-teknisa" :src="require('@/assets/images/logo-teknisa.png')" alt="Teknisa" />
+            <img class="logo-teknisa" :src="require('@/assets/images/logo-large.color.maida.svg')" alt="Teknisa" />
             
             <div class="container-form">          
               <form class="search-form">
@@ -64,24 +64,31 @@ export default {
           color: 'white',
           subsetores:[]
         },
-        
-        {
-          nome: 'TecFood',
-          background: 'rgba(232,54,54, 1)',
-          color: 'white',
-          subsetores: []
-        },
         {
           nome: 'Recursos Humanos',
           background: '#3363ce',
           color: 'white',
-          subsetores: []
-        },
-        {
-          nome: 'Pebbian',
-          background: 'rgba(0,157,116, 1)',
-          color: 'white',
-           
+          subsetores: [
+            {
+              nome: "People & Culture",
+              funcionarios:[
+                {
+                  nome: 'Taynan',
+                  funcao: 'Recrutamento',
+                  setor: 'People and Culture',
+                  chat: 'https://maidahealth.workplace.com/chat/t/100069739804186',
+                  email: 'exemplo@maidahealth.com',
+                },
+                {
+                  nome: 'Ronierison',
+                  funcao: 'Analista',
+                  setor: 'People and Culture',
+                  chat: 'https://maidahealth.workplace.com/chat/t/100070361362452',
+                  email: 'exemplo@maidahealth.com',
+                },
+              ]
+            }
+          ]
         },
         {
           nome: 'Salas de Reunião',
@@ -90,116 +97,92 @@ export default {
           subsetores: []
         },
         {
-          nome: 'Odhen',
-          logo: 'odhen.png',
-          background: '#d04b16',
+          nome: 'P&D',
+          background: '#1f3eaf',
           color: 'white',
           subsetores: [
             {
-              nome: 'Retail',
-              logo: 'odhen-retail.png',
+              nome: 'Aimorés',
+              logo: 'aimores.svg',
               infos: [
                 {
                   titulo: "Daily Meeting",
-                  texto: "DM ocorre todos os dias às 14:45h na sala https://hangouts.google.com/call/tysdkuGiy51QuF9ahgjrACEA"
-                },
-                {
-                  titulo: "Leonardo de férias",
-                  texto: "Leonardo de férias durante o mês de novembro."
+                  texto: "DM ocorre todos os dias às 09:30h na sala https://meet.google.com/rew-woip-sig"
                 }
               ],
-              salas: [
-                {
-                  nomeSala: 'Odhen Retail',
-                  responsavel: 'Alline Martins',
-                  link: 'https://hangouts.google.com/call/tysdkuGiy51QuF9ahgjrACEA' 
-                },
-                {
-                  nomeSala: 'Odhen Retail/Conciliador',
-                  responsavel: 'Francismar Araujo',
-                  link: 'https://hangouts.google.com/u/7/call/R5aS85hkjD4YZvTIi79sAEEE?no_rd' 
-                },
-                {
-                  nomeSala: 'Sala dos Estágiarios',
-                  responsavel: 'Alline Martins',
-                  link:'https://hangouts.google.com/call/cpMezNDehG758A61baUmACEA'
-                }
-              ],
+              // salas: [
+              //   {
+              //     nomeSala: 'Odhen Retail',
+              //     responsavel: 'Alline Martins',
+              //     link: 'https://hangouts.google.com/call/tysdkuGiy51QuF9ahgjrACEA' 
+              //   },
+              //   {
+              //     nomeSala: 'Odhen Retail/Conciliador',
+              //     responsavel: 'Francismar Araujo',
+              //     link: 'https://hangouts.google.com/u/7/call/R5aS85hkjD4YZvTIi79sAEEE?no_rd' 
+              //   },
+              //   {
+              //     nomeSala: 'Sala dos Estágiarios',
+              //     responsavel: 'Alline Martins',
+              //     link:'https://hangouts.google.com/call/cpMezNDehG758A61baUmACEA'
+              //   }
+              // ],
               funcionarios: [
                 {
-                  nome: 'Alline Martins',
+                  nome: 'Renato Félix',
                   funcao: 'Líder',
-                  setor: 'Odhen Retail',
-                  chat: 'https://chat.teknisa.com/direct/allinemartins',
-                  email: 'exemplo@teknisa.com',
+                  setor: 'Aimores',
+                  chat: 'https://maidahealth.workplace.com/chat/t/100069739804186',
+                  email: 'exemplo@maidahealth.com',
                 },
                 {
-                  nome: 'Moisés Freitas',
+                  nome: 'Lucas Dias',
                   funcao: 'Scrum Master',
-                  setor: 'Odhen Retail',
-                  chat: 'https://chat.teknisa.com/direct/moisesfreitas',
-                  email: 'exemplo@teknisa.com',
+                  setor: 'Aimores',
+                  chat: 'https://maidahealth.workplace.com/chat/t/100070361362452',
+                  email: 'exemplo@maidahealth.com',
                 },
                 {
-                  nome: 'Leticia Sahtler',
-                  funcao: 'Desenvolvedora',
-                  setor: 'Odhen Retail',
-                  chat: 'https://chat.teknisa.com/direct/leticiasahtler',
-                  email: 'exemplo@teknisa.com',
+                  nome: 'Wan Souza',
+                  funcao: 'Designer',
+                  setor: 'Aimores',
+                  chat: 'https://maidahealth.workplace.com/chat/t/100071075511811',
+                  email: 'exemplo@maidahealth.com',
                 },
                 {
                   nome: 'Antonio Luis',
                   funcao: 'Desenvolvedor',
-                  setor: 'Odhen Retail',
-                  chat: 'https://chat.teknisa.com/direct/antoniosilva',
-                  email: 'exemplo@teknisa.com',
+                  setor: 'Aimores',
+                  chat: 'https://maidahealth.workplace.com/chat/t/100071494925250',
+                  email: 'exemplo@maidahealth.com',
                 },
                 {
-                  nome: 'Rennan Tavares',
+                  nome: 'Dayvid Emerson',
                   funcao: 'Desenvolvedor',
-                  setor: 'Odhen Retail',
-                  chat: 'https://chat.teknisa.com/direct/rennantavares',
-                  email: 'exemplo@teknisa.com',
+                  setor: 'Aimores',
+                  chat: 'https://maidahealth.workplace.com/chat/t/100071079637357',
+                  email: 'exemplo@maidahealth.com',
                 },
                 {
-                  nome: 'Rafael',
+                  nome: 'Filipe Mateus',
                   funcao: 'Desenvolvedor',
-                  setor: 'Odhen Retail',
-                  chat: 'https://chat.teknisa.com/direct/rafael',
-                  email: 'exemplo@teknisa.com',
+                  setor: 'Aimores',
+                  chat: 'https://maidahealth.workplace.com/chat/t/100070725758156',
+                  email: 'exemplo@maidahealth.com',
                 },
-                {
-                  nome: 'Vinicius Resende',
-                  funcao: 'Desenvolvedor',
-                  setor: 'Odhen Retail',
-                  chat: 'https://chat.teknisa.com/direct/viniciusresende',
-                  email: 'exemplo@teknisa.com',
-                },
-                {
-                  nome: 'Gustavo',
-                  funcao: 'Desenvolvedor',
-                  setor: 'Odhen Retail',
-                  chat: 'https://chat.teknisa.com/direct/gustavo',
-                  email: 'exemplo@teknisa.com',
-                },
-                {
-                  nome: 'Everton',
-                  funcao: 'Desenvolvedor',
-                  setor: 'Odhen Retail',
-                  chat: 'https://chat.teknisa.com/direct/everton',
-                  email: 'exemplo@teknisa.com',
-                }
-
               ]
             },
             {
-              nome: 'Food Service'
+              nome: 'Crystal Ball'
             },
             {
-              nome: 'Delivery'
+              nome: 'Ada'
             },
             {
-              nome: 'For Sale'
+              nome: 'Octopus'
+            },
+            {
+              nome: 'iHealth'
             }
           ]
         },
@@ -209,7 +192,7 @@ export default {
           color: 'white',
           subsetores:[
             {
-              nome: 'controladoria',
+              nome: 'Controladoria',
               funcionarios:[
                 {
                   nome: 'Angelica',
@@ -229,22 +212,7 @@ export default {
             }
           ]
         },
-        {
-          nome: 'Zeedhi',
-          background: 'chocolate',
-          color: 'white'
-        },
-        {
-          nome: 'EAD',
-          background: 'blueviolet',
-          color: 'white'
-        },
 
-        {
-          nome: 'Cloud e Rede',
-          background: 'blue',
-          color: 'white'
-        },
         {
           nome: 'Comercial',
           background: 'coral',
@@ -373,7 +341,7 @@ export default {
     }
 
     .logo-teknisa{
-      width: 300px;
+      width: 156px;
     }
     .logo-search{
       position: relative;
