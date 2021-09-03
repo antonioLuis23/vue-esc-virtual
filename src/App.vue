@@ -52,9 +52,7 @@
         </div>
       </div>
     </main>
-    <footer>
-      <p>Criado por Antonio Luis.</p>
-    </footer>
+    <footer></footer>
   </div>
 </template>
 
