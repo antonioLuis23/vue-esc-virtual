@@ -148,7 +148,7 @@ export default {
               funcionarios: [
                 {
                   nome: "Renato Félix",
-                  funcao: "Líder",
+                  funcao: "Desenvolvedor",
                   setor: "Aimores",
                   chat:
                     "https://maidahealth.workplace.com/chat/t/100069739804186",
@@ -156,7 +156,7 @@ export default {
                 },
                 {
                   nome: "Lucas Dias",
-                  funcao: "Scrum Master",
+                  funcao: "Líder",
                   setor: "Aimores",
                   chat:
                     "https://maidahealth.workplace.com/chat/t/100070361362452",
@@ -164,7 +164,7 @@ export default {
                 },
                 {
                   nome: "Wan Souza",
-                  funcao: "Designer",
+                  funcao: "UI/UX",
                   setor: "Aimores",
                   chat:
                     "https://maidahealth.workplace.com/chat/t/100071075511811",
