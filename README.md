@@ -1,5 +1,7 @@
 # vue-esc-virtual
 
+A web app that allow companies to see employees categorized by sector they work. Created using Vue.
+
 ## Project setup
 ```
 npm install
