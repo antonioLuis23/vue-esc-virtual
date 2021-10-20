@@ -1,6 +1,6 @@
 # vue-esc-virtual
 
-A web app that allow companies to see employees categorized by sector they work. Created using Vue.
+A web app that allow companies to see employees categorized by sector they work. Created using Vue. you can see a preview at: maidavirtual.vercel.app. Click in P&D and Aimorés for an example.
 
 ## Project setup
 ```
